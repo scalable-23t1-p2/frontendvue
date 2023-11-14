@@ -38,6 +38,39 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/dashboard',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Dashboard',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Dashboard.vue'),
+      },
+    ],
+  },
+  {
+    path: '/upload',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Upload',
+        component: () => import('@/views/Upload.vue'),
+      },
+    ],
+  },
+  {
+    path: '/myvideos',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'MyVideos',
+        component: () => import('@/views/MyVideos.vue'),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({

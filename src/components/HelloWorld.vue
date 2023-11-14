@@ -31,7 +31,6 @@
         <v-col cols="auto">
           <v-btn
             color="primary"
-            to ='./login'
             min-width="228"
             rel="noopener noreferrer"
             size="x-large"
@@ -43,8 +42,9 @@
               size="large"
               start
             />
-
-            Log In
+          <router-link to=/login> 
+          <span class=“font-weight-bold” style="color: white; font-weight: bold; text-decoration: none;display: inline-block; border-bottom: none;">Log In</span> 
+          </router-link> 
           </v-btn>
         </v-col>
 

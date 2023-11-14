@@ -48,6 +48,18 @@ export default defineConfig({
     port: 3000,
     watch: {
       usePolling: true
-  }
+    },
+    proxy: {
+      "/auth": {
+        // proxy everything from frontend http://localhost:3000 to backend at http://localhost:8000/auth/**
+        // that is why all api path on backend should begin with /api
+        target: "http://localhost:8000",
+      },
+      "/s3": {
+        // proxy everything from frontend http://localhost:3000 to backend at http://localhost:8000/auth/**
+        // that is why all api path on backend should begin with /api
+        target: "http://localhost:8000",
+      },
+    },
   },
 })
