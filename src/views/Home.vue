@@ -10,26 +10,23 @@
   <div class="container mt-5 text-center">
     <h3>{{ message }}</h3>
 
-    <v-col cols="auto">
-      <a href="javascript:void(0)" @click="uploadpage">
-          <v-btn
-            color="primary"
-            min-width="228"
-            rel="noopener noreferrer"
-            size="x-large"
-            target="_blank"
-            variant="flat"
-            @click="uploadpage"
-          >
-            <v-icon
-              icon="mdi-speedometer"
-              size="large"
-              start
-            />
-          <span class=“font-weight-bold” style="color: white; font-weight: bold; text-decoration: none;display: inline-block; border-bottom: none;">Upload</span>
-        </v-btn>
-      </a>
-      </v-col>
+      <v-btn
+        color="primary"
+        min-width="228"
+        rel="noopener noreferrer"
+        size="x-large"
+        target="_blank"
+        variant="flat"
+        @click="uploadPage"
+      >
+        <v-icon
+          icon="mdi-speedometer"
+          size="large"
+          start
+        />
+      <span class=“font-weight-bold” style="color: white; font-weight: bold; text-decoration: none;display: inline-block; border-bottom: none;">Upload</span>
+    </v-btn>
+
     <v-btn
       color="warning"
       min-width="228"
@@ -47,9 +44,13 @@
       <span class=“font-weight-bold” style="color: white; font-weight: bold; text-decoration: none;display: inline-block; border-bottom: none;">My Videos</span>
     </v-btn>
     <br>
+    <br>
     <a href="javascript:void(0)" class="btn btn-lg btn-primary"
        @click="logout"
     >Logout</a>
+  </div>
+  <div>
+
   </div>
 </template>
 
@@ -77,15 +78,13 @@ export default {
         // message.value = "Hi";
 
         message.value = `Hi ${data.email}`;
-
       } catch (e) {
         await router.push('/login');
       }
     });
-    const uploadpage = async () => {
+    const uploadPage = async () => {
       await router.push('/upload');
     }
-
     const myVideosPage = async () => {
       await router.push('/myvideos');
     }
@@ -101,7 +100,7 @@ export default {
     return {
       message,
       myVideosPage,
-      uploadpage,
+      uploadPage,
       logout
     }
   }

@@ -1,5 +1,6 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
+import ViewVideo from "@/views/ViewVideo.vue";
 
 const routes = [
   {
@@ -71,6 +72,58 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/test',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Test',
+        component: () => import('@/views/Test.vue'),
+      },
+    ],
+  },
+  {
+    path: '/test2',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Test2',
+        component: () => import('@/views/Test2.vue'),
+      },
+    ],
+  },
+  {
+    path: '/test3',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Test3',
+        component: () => import('@/views/Test3.vue'),
+      },
+    ],
+  },
+  {
+    path: '/viewVideo/:id',
+
+    name: 'viewVideo',
+    props: true,
+    component: ViewVideo
+  },
+  // {
+  //   path: '/viewVideo/:id',
+  //   component: () => import('@/layouts/default/Default.vue'),
+  //   children: [
+  //     {
+  //       path: '',
+  //       name: 'viewVideo',
+  //       component: ViewVideo,
+  //     },
+  //   ],
+  // },
+
 ]
 
 const router = createRouter({
